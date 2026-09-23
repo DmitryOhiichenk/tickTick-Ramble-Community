@@ -1,0 +1,7 @@
+#!/bin/bash
+# Launch the freshly installed app for the logged-in user (the installer itself runs as root).
+CONSOLE_USER="$(stat -f%Su /dev/console)"
+if [ -n "$CONSOLE_USER" ] && [ "$CONSOLE_USER" != "root" ]; then
+    launchctl asuser "$(id -u "$CONSOLE_USER")" sudo -u "$CONSOLE_USER" open "/Applications/TickTick Live.app" || true
+fi
+exit 0
