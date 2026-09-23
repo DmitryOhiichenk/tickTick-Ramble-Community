@@ -38,6 +38,7 @@ final class SettingsStore: ObservableObject {
     private var syncingLoginItem = false
 
     init() {
+        Migration.runIfNeeded()
         language = AppLanguage(rawValue: defaults.string(forKey: "language") ?? "") ?? .en
         appearance = AppAppearance(rawValue: defaults.string(forKey: "appearance") ?? "") ?? .system
         defaults.removeObject(forKey: "persistentDefault")

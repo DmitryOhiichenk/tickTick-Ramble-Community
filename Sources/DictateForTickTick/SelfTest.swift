@@ -1,6 +1,6 @@
 import Foundation
 
-/// `TickTickLive --selftest` — checks date parsing and the TickTick payload without network or UI.
+/// `DictateForTickTick --selftest` — checks date parsing and the TickTick payload without network or UI.
 enum SelfTest {
     static func run() -> Bool {
         var cal = Calendar(identifier: .gregorian)

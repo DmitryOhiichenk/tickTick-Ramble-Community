@@ -98,7 +98,7 @@ final class HotkeyManager {
     private var handlerRef: EventHandlerRef?
     var onPressed: (() -> Void)?
 
-    private static let signature: OSType = 0x54544C56 // 'TTLV'
+    private static let signature: OSType = 0x44465454 // 'DFTT'
 
     init() {
         var spec = EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyPressed))

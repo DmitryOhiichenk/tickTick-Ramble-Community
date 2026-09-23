@@ -12,7 +12,7 @@ final class MainWindow: NSWindow, NSWindowDelegate {
         super.init(contentRect: NSRect(x: 0, y: 0, width: 420, height: 680),
                    styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
                    backing: .buffered, defer: false)
-        title = "TickTick Live"
+        title = "Dictate for TickTick"
         titleVisibility = .hidden
         titlebarAppearsTransparent = true
         // Fixed-width window: the green button zooms instead of going full screen.
@@ -55,8 +55,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         panel = MainWindow(rootView: RootView().environmentObject(app).environmentObject(settings))
         panel.onEscape = { [weak self] in self?.app.escapePressed() }
         panel.onCloseRequest = { [weak self] in self?.app.closeTapped() }
-        panel.setFrameAutosaveName("TickTickLiveMainPanel")
-        if !panel.setFrameUsingName("TickTickLiveMainPanel") { centerOnActiveScreen() }
+        panel.setFrameAutosaveName("MainWindow")
+        if !panel.setFrameUsingName("MainWindow") { centerOnActiveScreen() }
 
         app.hideWindow = { [weak self] in self?.hidePanel() }
 
@@ -217,7 +217,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if show {
             if statusItem == nil {
                 let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-                let image = NSImage(systemSymbolName: "checklist", accessibilityDescription: "TickTick Live")
+                let image = NSImage(systemSymbolName: "checklist", accessibilityDescription: "Dictate for TickTick")
                 image?.isTemplate = true
                 item.button?.image = image
                 statusItem = item

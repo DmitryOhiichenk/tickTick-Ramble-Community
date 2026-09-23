@@ -5,13 +5,13 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
     <key>CFBundleDisplayName</key>
-    <string>TickTick Live</string>
+    <string>Dictate for TickTick</string>
     <key>CFBundleName</key>
-    <string>TickTick Live</string>
+    <string>Dictate for TickTick</string>
     <key>CFBundleExecutable</key>
-    <string>TickTickLive</string>
+    <string>DictateForTickTick</string>
     <key>CFBundleIdentifier</key>
-    <string>app.ticktick-live.voice</string>
+    <string>app.dictate-for-ticktick</string>
     <key>CFBundleIconFile</key>
     <string>AppIcon</string>
     <key>CFBundlePackageType</key>
@@ -34,10 +34,10 @@
     <key>LSApplicationCategoryType</key>
     <string>public.app-category.productivity</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>TickTick Live listens while you dictate tasks and streams the audio to Gemini to recognize them.</string>
+    <string>Dictate for TickTick listens while you dictate tasks and streams the audio to Gemini to recognize them.</string>
     <key>NSHighResolutionCapable</key>
     <true/>
     <key>NSHumanReadableCopyright</key>
-    <string>TickTick Live — Voice Task Manager</string>
+    <string>Unofficial app. Not affiliated with TickTick (Appest Inc.) or Doist.</string>
 </dict>
 </plist>

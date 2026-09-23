@@ -1,10 +1,10 @@
 #!/bin/bash
-# Builds "TickTick Live.app" into build/. Needs only Xcode Command Line Tools.
+# Builds "Dictate for TickTick.app" into build/. Needs only Xcode Command Line Tools.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-APP_NAME="TickTick Live"
-EXEC="TickTickLive"
+APP_NAME="Dictate for TickTick"
+EXEC="DictateForTickTick"
 VERSION="${VERSION:-1.0.0}"
 BUILD_NUMBER="${BUILD_NUMBER:-$(date +%Y%m%d%H%M)}"
 APP="build/$APP_NAME.app"

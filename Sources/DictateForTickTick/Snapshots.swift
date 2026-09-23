@@ -1,7 +1,7 @@
 import AppKit
 import SwiftUI
 
-/// `TickTickLive --snapshots <dir>` renders every screen to PNG (light and dark) for visual review.
+/// `DictateForTickTick --snapshots <dir>` renders every screen to PNG (light and dark) for visual review.
 @MainActor
 enum Snapshots {
     static func run(to dir: String) {

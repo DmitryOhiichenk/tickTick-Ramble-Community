@@ -1,6 +1,10 @@
-# TickTick Live — Voice Task Manager
+# Dictate for TickTick
 
 A voice brain dump for TickTick on macOS. You talk, tasks appear as cards while you speak (Gemini Live API, function calls), you check them, and one button sends them to your TickTick Inbox.
+
+> **Unofficial app.** Dictate for TickTick is an independent open-source project. It is not affiliated with, endorsed by or sponsored by TickTick (Appest Inc.) or Doist. TickTick is a trademark of its owner and is used here only to say which service the app works with.
+
+Formerly "TickTick Live". Updating from 1.0.0 keeps your settings, tokens and unsent tasks; the .pkg installer also removes the old app.
 
 ## Features
 
@@ -21,9 +25,9 @@ A voice brain dump for TickTick on macOS. You talk, tasks appear as cards while 
 
 ## Install
 
-**[⬇ Download TickTick Live for Mac (.pkg)](https://github.com/DmitryOhiichenk/tickTick-Ramble-Community/releases/latest/download/TickTick-Live.pkg)** — the recommended installer. Open it and follow the steps; the app is installed into Applications and launched.
+**[⬇ Download Dictate for TickTick for Mac (.pkg)](https://github.com/DmitryOhiichenk/dictate-for-ticktick/releases/latest/download/Dictate-for-TickTick.pkg)** — the recommended installer. Open it and follow the steps; the app is installed into Applications and launched.
 
-Alternative: [download the .dmg](https://github.com/DmitryOhiichenk/tickTick-Ramble-Community/releases/latest/download/TickTick-Live.dmg), open it and drag the app into Applications. All versions are on the [Releases](https://github.com/DmitryOhiichenk/tickTick-Ramble-Community/releases) page.
+Alternative: [download the .dmg](https://github.com/DmitryOhiichenk/dictate-for-ticktick/releases/latest/download/Dictate-for-TickTick.dmg), open it and drag the app into Applications. All versions are on the [Releases](https://github.com/DmitryOhiichenk/dictate-for-ticktick/releases) page.
 
 Requires macOS 14 or later, Apple Silicon or Intel.
 
@@ -71,18 +75,18 @@ The script builds a universal binary (Apple Silicon + Intel), the `.app`, the `.
 Checks without UI or network (date parsing in 7 languages, TickTick request body, priority mapping):
 
 ```bash
-swift build && .build/debug/TickTickLive --selftest
+swift build && .build/debug/DictateForTickTick --selftest
 ```
 
-Screenshots of every screen in light and dark mode: `.build/debug/TickTickLive --snapshots <folder>` (set `SNAP_LANG=en` for English).
+Screenshots of every screen in light and dark mode: `.build/debug/DictateForTickTick --snapshots <folder>` (set `SNAP_LANG=en` for English).
 
 ## Where things are
 
-- `Sources/TickTickLive/AppState.swift` — recording session, function-call handling, manual editing, sending.
+- `Sources/DictateForTickTick/AppState.swift` — recording session, function-call handling, manual editing, sending.
 - `LivePrompt.swift` — system prompt and the 5 Gemini functions.
 - `GeminiLiveClient.swift` — Live API WebSocket client.
 - `TickTickClient.swift` — TickTick Open API.
 - `DateParser.swift` — local date parsing ("next Friday 3pm", "завтра в 15:00").
 - `Hotkey.swift` — global hotkey (Carbon) and conflict checks.
 - `Views/` — SwiftUI screens.
-- Unsent tasks are kept in `~/Library/Application Support/TickTick Live/draft.json`, so a crash or quit never loses them. No session logs are written.
+- Unsent tasks are kept in `~/Library/Application Support/Dictate for TickTick/draft.json`, so a crash or quit never loses them. No session logs are written.

@@ -528,7 +528,7 @@ final class AppState: ObservableObject {
 
     static var supportDirectory: URL {
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("TickTick Live", isDirectory: true)
+            .appendingPathComponent("Dictate for TickTick", isDirectory: true)
     }
 
     private static var draftURL: URL { supportDirectory.appendingPathComponent("draft.json") }

@@ -2,9 +2,9 @@ import Foundation
 import Security
 
 enum Keychain {
-    private static let service = "app.ticktick-live.tokens"
+    static let defaultService = "app.dictate-for-ticktick.tokens"
 
-    static func read(_ account: String) -> String {
+    static func read(_ account: String, service: String = defaultService) -> String {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -18,7 +18,7 @@ enum Keychain {
         return String(data: data, encoding: .utf8) ?? ""
     }
 
-    static func write(_ account: String, _ value: String) {
+    static func write(_ account: String, _ value: String, service: String = defaultService) {
         let base: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,

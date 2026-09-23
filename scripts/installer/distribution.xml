@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <installer-gui-script minSpecVersion="2">
-    <title>TickTick Live</title>
+    <title>Dictate for TickTick</title>
     <welcome file="welcome.html" mime-type="text/html"/>
     <conclusion file="conclusion.html" mime-type="text/html"/>
     <options customize="never" require-scripts="false" hostArchitectures="arm64,x86_64"/>
@@ -9,11 +9,11 @@
         <allowed-os-versions><os-version min="14.0"/></allowed-os-versions>
     </volume-check>
     <choices-outline>
-        <line choice="default"><line choice="app.ticktick-live.voice"/></line>
+        <line choice="default"><line choice="app.dictate-for-ticktick"/></line>
     </choices-outline>
     <choice id="default"/>
-    <choice id="app.ticktick-live.voice" visible="false">
-        <pkg-ref id="app.ticktick-live.voice"/>
+    <choice id="app.dictate-for-ticktick" visible="false">
+        <pkg-ref id="app.dictate-for-ticktick"/>
     </choice>
-    <pkg-ref id="app.ticktick-live.voice" version="0" onConclusion="none">component.pkg</pkg-ref>
+    <pkg-ref id="app.dictate-for-ticktick" version="0" onConclusion="none">component.pkg</pkg-ref>
 </installer-gui-script>

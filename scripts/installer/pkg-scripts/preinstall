@@ -1,4 +1,7 @@
 #!/bin/bash
 # Quit a running copy so the new version can replace it.
+pkill -x DictateForTickTick 2>/dev/null || true
+# Version 1.0.0 was called "TickTick Live": quit it and remove the old copy so only one app remains.
 pkill -x TickTickLive 2>/dev/null || true
+rm -rf "/Applications/TickTick Live.app"
 exit 0

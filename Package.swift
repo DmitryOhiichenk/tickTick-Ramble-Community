@@ -2,12 +2,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "TickTickLive",
+    name: "DictateForTickTick",
     platforms: [.macOS(.v14)],
     targets: [
         .executableTarget(
-            name: "TickTickLive",
-            path: "Sources/TickTickLive",
+            name: "DictateForTickTick",
+            path: "Sources/DictateForTickTick",
             linkerSettings: [
                 .linkedFramework("Carbon"),
                 .linkedFramework("AVFoundation"),
