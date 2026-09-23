@@ -17,15 +17,21 @@ enum Snapshots {
         let cal = Calendar.current
         let tomorrow15 = cal.date(bySettingHour: 15, minute: 0, second: 0, of: cal.date(byAdding: .day, value: 1, to: Date())!)!
         let friday = cal.date(byAdding: .day, value: 2, to: cal.startOfDay(for: Date()))!
+        let english = lang != .ru
         let sample = [
-            TaskItem(id: "t1", title: "Позвонить Анне по договору", notes: "Уточнить сроки оплаты и адрес доставки",
+            TaskItem(id: "t1", title: english ? "Call Anna about the contract" : "Позвонить Анне по договору",
+                     notes: english ? "Confirm payment dates and the delivery address" : "Уточнить сроки оплаты и адрес доставки",
                      due: tomorrow15, allDay: false, priority: .p1),
-            TaskItem(id: "t2", title: "Купить корм коту", due: friday, allDay: true, priority: .p4),
-            TaskItem(id: "t3", title: "Отправить отчёт за сентябрь", priority: .p2, uncertain: [.due]),
-            TaskItem(id: "t4", title: "Записаться к стоматологу", priority: .p3, uncertain: [.title]),
+            TaskItem(id: "t2", title: english ? "Buy cat food" : "Купить корм коту", due: friday, allDay: true, priority: .p4),
+            TaskItem(id: "t3", title: english ? "Send the September report" : "Отправить отчёт за сентябрь", priority: .p2, uncertain: [.due]),
+            TaskItem(id: "t4", title: english ? "Book a dentist appointment" : "Записаться к стоматологу", priority: .p3, uncertain: [.title]),
         ]
 
+        let savedAppearance = settings.appearance
+
         func shot(_ name: String, dark: Bool, configure: (AppState) -> Void) {
+            // The theme picker in Settings shows the theme of the shot.
+            settings.appearance = dark ? .dark : .light
             let state = AppState(settings: settings, persistsDraft: false)
             state.tasks = []
             configure(state)
@@ -52,7 +58,6 @@ enum Snapshots {
                 s.screen = .recording
                 s.recState = .listening
                 s.levels = (0..<28).map { i in Float(0.15 + 0.7 * abs(sin(Double(i) * 0.55))) }
-                s.flashId = "t2"
             }
             shot("3-review", dark: dark) { s in
                 s.tasks = sample
@@ -84,6 +89,7 @@ enum Snapshots {
             }
         }
         settings.language = savedLanguage
+        settings.appearance = savedAppearance
         print("snapshots written to \(dir)")
     }
 }
