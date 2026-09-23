@@ -21,14 +21,13 @@ A voice brain dump for TickTick on macOS. You talk, tasks appear as cards while 
 
 ## Install
 
-Download an installer from the [Releases](https://github.com/DmitryOhiichenk/tickTick-Ramble-Community/releases) page, or build it yourself (see [Build from source](#build-from-source)):
+**[⬇ Download TickTick Live for Mac (.pkg)](https://github.com/DmitryOhiichenk/tickTick-Ramble-Community/releases/latest/download/TickTick-Live.pkg)** — the recommended installer. Open it and follow the steps; the app is installed into Applications and launched.
 
-- `TickTick-Live-<version>.pkg` — a standard installer wizard; installs the app into Applications and launches it.
-- `TickTick-Live-<version>.dmg` — open it and drag the app into Applications.
+Alternative: [download the .dmg](https://github.com/DmitryOhiichenk/tickTick-Ramble-Community/releases/latest/download/TickTick-Live.dmg), open it and drag the app into Applications. All versions are on the [Releases](https://github.com/DmitryOhiichenk/tickTick-Ramble-Community/releases) page.
 
 Requires macOS 14 or later, Apple Silicon or Intel.
 
-The build is ad-hoc signed (no Apple Developer ID). It runs as-is on the Mac it was built on. On another Mac, the first launch needs a right-click on the app → Open, or System Settings → Privacy & Security → Open Anyway.
+**First launch.** The app is not notarized by Apple (no paid Developer ID), so macOS blocks it the first time. When it says it can't verify the installer or the app, open **System Settings → Privacy & Security**, scroll down and click **Open Anyway**. You only need to do this once.
 
 ## First run
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Builds the app and packs two installers into dist/:
-#   TickTick-Live-<version>.dmg — drag the app into Applications
-#   TickTick-Live-<version>.pkg — classic installer wizard, installs into /Applications
+#   TickTick-Live.dmg — drag the app into Applications
+#   TickTick-Live.pkg — classic installer wizard, installs into /Applications
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -13,8 +13,9 @@ APP="build/$APP_NAME.app"
 ./scripts/build.sh
 
 mkdir -p dist
-DMG="dist/TickTick-Live-$VERSION.dmg"
-PKG="dist/TickTick-Live-$VERSION.pkg"
+# Stable names: README links to releases/latest/download/<name>, which must not change between versions.
+DMG="dist/TickTick-Live.dmg"
+PKG="dist/TickTick-Live.pkg"
 
 echo "▸ Creating DMG"
 STAGE="$(mktemp -d)"
